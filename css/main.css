@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #472595;
+  background: #ebbe11;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3120,6 +3120,9 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+p {
+  margin: 10px 0;
 }
 blockquote {
   background-color: #f7f7f7;
