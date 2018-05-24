@@ -96,7 +96,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/09/reecode/qrcode.png">
 <meta property="og:image" content="http://yoursite.com/2018/05/09/reecode/getUserMedia.png">
-<meta property="og:updated_time" content="2018-05-24T14:33:31.505Z">
+<meta property="og:updated_time" content="2018-05-24T14:42:55.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于微信JS-SDK的录音与语音评价功能实现">
 <meta name="twitter:description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo： 最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是示例二维码，使用微信扫一扫即可查看： 功能列表 ☑ 录音 ☑ 录音动画 ☑ 录音播放 ☑ 英语语音评价">
@@ -409,6 +409,7 @@
 <li><strong>☑</strong> 英语语音评价（部分实现）</li>
 <li><strong>☑</strong> 只允许微信客户端打开</li>
 </ul>
+<hr>
 <h1 id="零-技术选型"><a href="#零-技术选型" class="headerlink" title="零 技术选型"></a>零 技术选型</h1><h2 id="录音方面"><a href="#录音方面" class="headerlink" title="录音方面"></a>录音方面</h2><p>可供选择的方案有两个：</p>
 <ol>
 <li><del>使用HTML5接口 - <code>getUserMedia()</code>；</del></li>
@@ -440,6 +441,7 @@
 </li>
 </ol>
 <p>本次整个方案使用<strong>方案2</strong>。</p>
+<hr>
 <h1 id="一-微信JS-SDK环境准备"><a href="#一-微信JS-SDK环境准备" class="headerlink" title="一 微信JS-SDK环境准备"></a>一 微信JS-SDK环境准备</h1><p>写在前边：此处的开发环境不是指本地的开发环境，单指使用<code>微信JS-SDK</code>所需完成的一系列的获取<code>AccessToken</code>、<code>jsapi_ticket</code>等前置条件。</p>
 <p><strong>开发环境</strong><br>云服务器：腾讯云 · 小程序（特价，买了个折腾）<br>后台语音：PHP · CodeIgniter（小程序PHP样例使用CI框架）</p>
 <h2 id="1）公众号配置"><a href="#1）公众号配置" class="headerlink" title="1）公众号配置"></a>1）公众号配置</h2><p>前置的公众号申请等就不再赘述，如果要正常使用<code>微信JS-SDK</code>的功能，需要在公众号配置一些内容。</p>
@@ -476,6 +478,7 @@
 <h3 id="2-服务器定时任务"><a href="#2-服务器定时任务" class="headerlink" title="2.服务器定时任务"></a>2.服务器定时任务</h3><p>windows平台的计划任务或者是Unix平台的<code>Crontab</code>都有定时执行php脚本或者访问URL的方法，但是由于使用的<code>腾讯云 · 小程序</code>使用的是<code>Wafer</code>一体化解决方案，无法直接访问远端服务器，故此方法放弃。</p>
 <h3 id="3-定时访问URL"><a href="#3-定时访问URL" class="headerlink" title="3. 定时访问URL"></a>3. 定时访问URL</h3><p>我们这次定时刷新<code>access_token</code>及<code>jsapi_ticket</code>采用的就是此方法，<code>腾讯云平台</code>，有个免费的功能<code>云拨测</code>可定时访问某个URL，并且在无法访问时，将预警信息发送给某个设定好的用户组。<br>将我们之前写好的获取<code>access_token</code>及<code>jsapi_ticket</code>方法，写到index()方法下，将URL填到拨测地址中，定时刷新，搞定。</p>
 <p>注1. 云拨测最长的周期为半个小时，而且每次拨测可能访问地址5-6次，其实更稳妥的方法是在数据库中设置标志位，防治过度刷新，但是每天2000次的限额完全够用，就暂时未做此功能。</p>
+<hr>
 
       
     </div>
