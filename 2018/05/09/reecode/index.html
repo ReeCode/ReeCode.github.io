@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="前端," />
+  <meta name="keywords" content="Javascript,微信,录音,前端," />
 
 
 
@@ -86,19 +86,20 @@
 
 
 
-<meta name="description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo：">
-<meta name="keywords" content="前端">
+<meta name="description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo： 最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是示例二维码，使用微信扫一扫即可查看： 功能列表 ☑ 录音 ☑ 录音动画 ☑ 录音播放 ☑ 英语语音评价">
+<meta name="keywords" content="Javascript,微信,录音,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于微信JS-SDK的录音与语音评价功能实现">
 <meta property="og:url" content="http://yoursite.com/2018/05/09/reecode/index.html">
 <meta property="og:site_name" content="码路漫漫">
-<meta property="og:description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo：">
+<meta property="og:description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo： 最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是示例二维码，使用微信扫一扫即可查看： 功能列表 ☑ 录音 ☑ 录音动画 ☑ 录音播放 ☑ 英语语音评价">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/09/reecode/qrcode.png">
-<meta property="og:updated_time" content="2018-05-21T09:43:35.107Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/09/reecode/getUserMedia.png">
+<meta property="og:updated_time" content="2018-05-24T14:26:28.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于微信JS-SDK的录音与语音评价功能实现">
-<meta name="twitter:description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo：">
+<meta name="twitter:description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo： 最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是示例二维码，使用微信扫一扫即可查看： 功能列表 ☑ 录音 ☑ 录音动画 ☑ 录音播放 ☑ 英语语音评价">
 <meta name="twitter:image" content="http://yoursite.com/2018/05/09/reecode/qrcode.png">
 
 
@@ -362,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  69
+                  2,567
                 </span>
               
 
@@ -378,7 +379,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  10
                 </span>
               
             </div>
@@ -399,7 +400,80 @@
       
 
       
-        <p>最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。<br>以下是简单的Demo：<br><img src="/2018/05/09/reecode/qrcode.png" title="qrcode"></p>
+        <p>最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。<br>以下是简单的Demo：<br><img src="/2018/05/09/reecode/qrcode.png"></p>
+<p>最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。<br>以下是示例二维码，使用微信扫一扫即可查看：</p>
+<h1 id="功能列表"><a href="#功能列表" class="headerlink" title="功能列表"></a>功能列表</h1><ul>
+<li><strong>☑</strong> 录音</li>
+<li><strong>☑</strong> 录音动画</li>
+<li><strong>☑</strong> 录音播放</li>
+<li><strong>☑</strong> 英语语音评价（部分实现）</li>
+<li><strong>☑</strong> 只允许微信客户端打开</li>
+</ul>
+<h1 id="零-技术选型"><a href="#零-技术选型" class="headerlink" title="零 技术选型"></a>零 技术选型</h1><h2 id="录音方面"><a href="#录音方面" class="headerlink" title="录音方面"></a>录音方面</h2><p>可供选择的方案有两个：</p>
+<ol>
+<li><del>使用HTML5接口 - <code>getUserMedia()</code>；</del></li>
+<li>微信开放平台-<code>微信JS-SDK</code>；.</li>
+</ol>
+<img src="/2018/05/09/reecode/getUserMedia.png" title="getUserMedia() API兼容性">
+<p>由于主要应用场景是在移动端，此API只能在<code>iOS 11+</code> 与<code>Android 5-6.X</code>及以上可用，兼容性感人，故舍弃此方案。所以此次录音实现基于微信开放平台提供的<code>微信JS-SDK</code>。</p>
+<h2 id="英语语音识别"><a href="#英语语音识别" class="headerlink" title="英语语音识别"></a>英语语音识别</h2><p>因为主要是基于微信平台，所以要求语音识别平台需要提供Web Api。</p>
+<p>语音识别方面功能，主要有两种技术路线。</p>
+<ol>
+<li>专门着力于语音识别及相关产业的技术平台，例如<code>讯飞</code>以及调研中发现的<code>驰声</code>。<br>优势：专业并且提供语音评测相关功能；<br>劣势：花费昂贵；</li>
+<li>AI开放平台，因为各大厂商布局AI，免费提供语音识别相关的接口。<br>优势：免费，API清晰；<br>劣势：并非为专门为教育定制，无语音评测功能；</li>
+</ol>
+<p>结合项目的实际情况，决定使用第二种方案。（主要是因为经费有限……）<br>大厂提供的免费方案主要有：</p>
+<ul>
+<li><a href="https://cloud.baidu.com/doc/SPEECH/ASR-API.html" target="_blank" rel="noopener">百度AI</a><br>限制：50000次/天免费<br>格式支持：pcm（不压缩）、wav（不压缩，pcm编码）、amr（压缩格式）；固定16k 采样率；</li>
+<li><del><a href="https://cloud.tencent.com/document/product/441" target="_blank" rel="noopener">腾讯AI开发平台</a></del><br>语音参数：必须符合16k或8K采样率、16bit采样位数、单声道<br>语音格式：PCM、WAV、AMR、 SILK<br>其他：目前只支持<strong>汉语</strong></li>
+<li><del><a href="https://cloud.tencent.com/document/product/441/6204" target="_blank" rel="noopener">腾讯云智能语音服务</a></del><br>语音参数：必须符合16k或8K采样率、16bit采样位数、单声道<br>语音格式：通用标准格式，例如 mp3，wma，wav 等</li>
+<li><del><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=21516712282KzWVE" target="_blank" rel="noopener">微信公众平台AI开放接口</a></del><br>语音参数：16k，单声道，最大1M<br>语音格式：mp3</li>
+<li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank" rel="noopener">微信公众平台JS-SDK智能接口</a><br>其他：目前只支持<strong>汉语</strong><br><del>大厂竞争果然系列，大鹅厂光语音服务肉眼可见的就折腾了这么多。（大雾）</del></li>
+</ul>
+<p>经过一番折腾，最终可以形成两种方案：</p>
+<ol>
+<li><p><code>微信JS-SDK音频接口录音</code>-&gt;<code>上传到微信临时素材</code>-&gt;<code>下载到服务器</code>-&gt;<code>转换录音文件格式</code>-&gt;<code>百度AI语音识别返回结果</code>-&gt;<code>与预置的文件比对</code>-&gt;<code>返回比对结果</code><br>优势：识别结果准<br>劣势：慢（因为无法直接获取用户的录音，需要从微信公众平台的<code>临时素材</code>中转，且录音文件格式与百度AI可识别格式不一致，所以整个流程下来太慢）；微信公众号需要<code>企业认证</code><br>其他：至于为什么不选用腾讯系列，因为<del>腾讯系列语音服务没有调通</del>。。。</p>
+</li>
+<li><p><code>微信JS-SDK音频接口录音</code>-&gt;<code>调用JS-SDK智能接口返回识别结果</code>-&gt;<code>结果转为拼音</code>-&gt;<code>与预置的文件比对</code>-&gt;<code>返回比对结果</code><br>优势：返回结果迅速、方法简单<br>劣势：识别结果不太准确（因为<code>JS-SDK智能接口</code>不只是单单根据语音直接转换，还会在结果的基础上进行一定程度的联想，话说为啥不能增加个语言选择参数。）</p>
+</li>
+</ol>
+<p>本次整个方案使用<strong>方案2</strong>。</p>
+<h1 id="一-微信JS-SDK环境准备"><a href="#一-微信JS-SDK环境准备" class="headerlink" title="一 微信JS-SDK环境准备"></a>一 微信JS-SDK环境准备</h1><p>写在前边：此处的开发环境不是指本地的开发环境，单指使用<code>微信JS-SDK</code>所需完成的一系列的获取<code>AccessToken</code>、<code>jsapi_ticket</code>等前置条件。</p>
+<p><strong>开发环境</strong><br>云服务器：腾讯云 · 小程序（特价，买了个折腾）<br>后台语音：PHP · CodeIgniter（小程序PHP样例使用CI框架）</p>
+<h2 id="1）公众号配置"><a href="#1）公众号配置" class="headerlink" title="1）公众号配置"></a>1）公众号配置</h2><p>前置的公众号申请等就不再赘述，如果要正常使用<code>微信JS-SDK</code>的功能，需要在公众号配置一些内容。</p>
+<h3 id="配置IP白名单"><a href="#配置IP白名单" class="headerlink" title="配置IP白名单"></a>配置IP白名单</h3><p>通过微信公众平台 <strong>开发</strong> -&gt; <strong>基本配置</strong> -&gt; <strong>IP白名单</strong> 进行设置，将开发环境的IP配置到IP白名单。</p>
+<p>注1. 如果不配置白名单将无法获取<code>access_token</code>，并在返回结果中返回<code>40164</code>错误；<br>注2. 因为是在<code>腾讯云 · 小程序</code>主机<code>开发环境</code>下折腾的，该环境如果一周不更新新的代码会暂时关闭，IP也会发生变化，所以建议每周更新一下代码；</p>
+<h3 id="配置JS接口安全域名"><a href="#配置JS接口安全域名" class="headerlink" title="配置JS接口安全域名"></a>配置JS接口安全域名</h3><p>通过微信公众平台 <strong>设置</strong> -&gt; <strong>公众号设置</strong> -&gt; <strong>功能设置</strong> -&gt; <strong>JS接口安全域名</strong> 进行设置，将JS接口安全域名写入。</p>
+<p>注1. 一个公众号最多可以配置3个安全域名，需使用字母、数字及“-”的组合，不支持IP地址、端口号及短链域名，且域名必须经过备案；<br>注2. 需要将<code>MP_verify_qEwAJiPuWerKftkO.txt</code>（可在配置JS接口安全域名处自行下载）放到配置域名的根目录,并确保可以访问到。<code>腾讯云 · 小程序</code>默认样例使用的CI框架，需要放到<code>\server</code>下；<br>注3. 如不配置JS接口安全域名，则无法成功调用JS-SDK；</p>
+<h2 id="2）获取access-token"><a href="#2）获取access-token" class="headerlink" title="2）获取access_token"></a>2）获取access_token</h2><p><code>access_token</code>是公众号的全局唯一接口调用凭据，调用公众号的各个接口时都需要使用。获取<code>access_token</code>需要<code>appid</code>与<code>appsecret</code>。微信公众平台的<code>access_token</code>有效期为<code>7200s (2小时)</code>，每天最高可调用上限为2000次。因此获取<code>access_token</code>需要做到：</p>
+<ol>
+<li>定时刷新（刷新间隔大于1分钟，小于120分）；</li>
+<li>全局缓存<code>access_token</code>；</li>
+</ol>
+<h3 id="Show-me-the-code"><a href="#Show-me-the-code" class="headerlink" title="Show me the code"></a>Show me the code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">className</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> $appId = <span class="string">"appId"</span>;</span><br><span class="line">  <span class="keyword">var</span> $appSecret = <span class="string">"appSecret"</span>;</span><br><span class="line">  <span class="keyword">var</span> $accessTokenFile = <span class="string">"wxtoken.txt"</span>;</span><br><span class="line">  <span class="comment">// var $jsapiTicketFile = "wxjsapiTicket.txt";</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">$this</span> - &gt; build_access_token(); <span class="comment">//获取access_token</span></span><br><span class="line">    <span class="comment">// $this - &gt; get_jsapi_ticket(); //获取jsapic_ticket</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">build_access_token</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $ch = curl_init(); <span class="comment">//初始化一个CURL对象</span></span><br><span class="line">    curl_setopt($ch, CURLOPT_URL, <span class="string">"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=&#123;$this-&gt;appId&#125;&amp;secret=&#123;$this-&gt;appSecret&#125;"</span>);</span><br><span class="line">    curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); </span><br><span class="line">    $data = json_decode(curl_exec($ch));</span><br><span class="line">    <span class="keyword">if</span> ($data - &gt; access_token) &#123;</span><br><span class="line">      $token_file = fopen(<span class="keyword">$this</span> - &gt; accessTokenFile, <span class="string">"w"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>); <span class="comment">//打开wxtoken.txt文件，没有会新建</span></span><br><span class="line">      fwrite($token_file, $data - &gt; access_token); <span class="comment">//重写wxtken.txt全部内容</span></span><br><span class="line">      fclose($token_file); <span class="comment">//关闭文件流</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">echo</span> $data - &gt; errmsg;</span><br><span class="line">    &#125;</span><br><span class="line">    curl_close($ch);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">read_token</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $token_file = fopen(<span class="keyword">$this</span> - &gt; accessTokenFile, <span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>);</span><br><span class="line">    $rs = fgets($token_file);</span><br><span class="line">    fclose($token_file);</span><br><span class="line">    <span class="keyword">return</span> $rs;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Talk-is-cheap"><a href="#Talk-is-cheap" class="headerlink" title="Talk is cheap"></a>Talk is cheap</h3><ol>
+<li>因为使用的是CI框架，将文件写到<code>server\application\controllers\</code>下可直接通过<code>域名+文件名</code>访问到该接口，默认执行文件中的<code>index</code>中的方法；</li>
+<li>代码中的基本逻辑通过<code>build_access_token()</code>方法获取<code>access_token</code>，并存储到<code>wxtken.txt</code>，通过<code>read_token()</code>方法读取<code>access_token</code>；</li>
+</ol>
+<p>获取access_token的详细情况见<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140183" target="_blank" rel="noopener">官方API</a>。</p>
+<h2 id="3）获取jsapi-ticket"><a href="#3）获取jsapi-ticket" class="headerlink" title="3）获取jsapi_ticket"></a>3）获取jsapi_ticket</h2><p><code>jsapi_ticket</code>是公众号用于调用微信JS接口的临时票据，通过access_token来获取。微信公众平台的<code>jsapi_ticket</code>有效期为<code>7200s (2小时)</code>，每天最高可调用上限为1000000次。因此同样在全局缓存。</p>
+<h3 id="Show-me-the-code-1"><a href="#Show-me-the-code-1" class="headerlink" title="Show me the code"></a>Show me the code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get_jsapi_ticket</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  $access_token = <span class="keyword">$this</span> - &gt; read_token();</span><br><span class="line">  $ch = curl_init(); <span class="comment">//初始化一个CURL对象</span></span><br><span class="line">  curl_setopt($ch, CURLOPT_URL, <span class="string">"https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=&#123;$access_token&#125;&amp;type=jsapi"</span>); </span><br><span class="line">  curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); </span><br><span class="line">  $data = json_decode(curl_exec($ch));</span><br><span class="line">  <span class="keyword">if</span> ($data - &gt; ticket) &#123;</span><br><span class="line">    $token_file = fopen(<span class="keyword">$this</span> - &gt; jsapiTicketFile, <span class="string">"w"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>);</span><br><span class="line">    fwrite($token_file, $data - &gt; ticket);</span><br><span class="line">    fclose($token_file); <span class="comment">//关闭文件流</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> $data - &gt; errmsg;</span><br><span class="line">  &#125;</span><br><span class="line">  curl_close($ch);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">read_jsapi_ticket</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  $jsapi_ticket_file = fopen(<span class="keyword">$this</span> - &gt; jsapiTicketFile, <span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>);</span><br><span class="line">  $rs = fgets($jsapi_ticket_file);</span><br><span class="line">  fclose($jsapi_ticket_file);</span><br><span class="line">  <span class="keyword">return</span> $rs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Talk-is-cheap-1"><a href="#Talk-is-cheap-1" class="headerlink" title="Talk is cheap"></a>Talk is cheap</h3><ol>
+<li>写到跟获取<code>access_token</code>同一文件中，以便同时刷新；</li>
+<li>同之前的代码中逻辑类似，通过<code>get_jsapi_ticket()</code>方法获取<code>jsapi_ticket</code>，并存储到<code>wxjsapiTicket.txt</code>，通过<code>read_jsapi_ticket()</code>方法读取<code>jsapi_ticket</code>；</li>
+</ol>
+<p>获取access_token的详细情况见<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140183" target="_blank" rel="noopener">官方API</a>。</p>
+<h2 id="4）刷新access-token及jsapi-ticket"><a href="#4）刷新access-token及jsapi-ticket" class="headerlink" title="4）刷新access_token及jsapi_ticket"></a>4）刷新access_token及jsapi_ticket</h2><p>由于微信公众平台的<code>access_token</code>与<code>jsapi_ticket</code>有两个小时有效期，故需要定期刷新。基本思路有如下三个：</p>
+<ol>
+<li><del>PHP定时执行任务；</del></li>
+<li><del>服务器定时任务；</del></li>
+<li>定时访问URL；</li>
+</ol>
+<h3 id="1-PHP定时执行任务"><a href="#1-PHP定时执行任务" class="headerlink" title="1.PHP定时执行任务"></a>1.PHP定时执行任务</h3><p>主要使用死循环，执行一次时间，使用<code>sleep()</code>函数休眠一段时间，如下代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ignore_user_abort();<span class="comment">//即使Client断开(如关掉浏览器)，PHP脚本也可以继续执行.</span></span><br><span class="line">set_time_limit(<span class="number">0</span>);<span class="comment">//执行时间为无限制，php默认的执行时间是30秒，通过set_time_limit(0)可以让程序无限制的执行下去</span></span><br><span class="line">$interval=<span class="number">60</span>*<span class="number">100</span>;<span class="comment">//每隔100分钟运行</span></span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">    <span class="comment">//do sth</span></span><br><span class="line">    sleep($interval);<span class="comment">//按设置的时间等待100分钟循环执行</span></span><br><span class="line">&#125;<span class="keyword">while</span>(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure></p>
+<p>缺点：缺点严重，启动之后，无法控制。而且一直消耗服务器资源，容易被杀死；</p>
+<h3 id="2-服务器定时任务"><a href="#2-服务器定时任务" class="headerlink" title="2.服务器定时任务"></a>2.服务器定时任务</h3><p>windows平台的计划任务或者是Unix平台的<code>Crontab</code>都有定时执行php脚本或者访问URL的方法，但是由于使用的<code>腾讯云 · 小程序</code>使用的是<code>Wafer</code>一体化解决方案，无法直接访问远端服务器，故此方法放弃。</p>
+<h3 id="3-定时访问URL"><a href="#3-定时访问URL" class="headerlink" title="3. 定时访问URL"></a>3. 定时访问URL</h3><p>我们这次定时刷新<code>access_token</code>及<code>jsapi_ticket</code>采用的就是此方法，<code>腾讯云平台</code>，有个免费的功能<code>云拨测</code>可定时访问某个URL，并且在无法访问时，将预警信息发送给某个设定好的用户组。<br>将我们之前写好的获取<code>access_token</code>及<code>jsapi_ticket</code>方法，写到index()方法下，将URL填到拨测地址中，定时刷新，搞定。</p>
+<p>注1. 云拨测最长的周期为半个小时，而且每次拨测可能访问地址5-6次，其实更稳妥的方法是在数据库中设置标志位，防治过度刷新，但是每天2000次的限额完全够用，就暂时未做此功能。</p>
 
       
     </div>
@@ -416,6 +490,12 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"><i class="fa fa-tag"></i> Javascript</a>
+          
+            <a href="/tags/微信/" rel="tag"><i class="fa fa-tag"></i> 微信</a>
+          
+            <a href="/tags/录音/" rel="tag"><i class="fa fa-tag"></i> 录音</a>
           
             <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
           
@@ -490,8 +570,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -532,7 +621,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -597,6 +686,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#功能列表"><span class="nav-number">1.</span> <span class="nav-text">功能列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零-技术选型"><span class="nav-number">2.</span> <span class="nav-text">零 技术选型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#录音方面"><span class="nav-number">2.1.</span> <span class="nav-text">录音方面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#英语语音识别"><span class="nav-number">2.2.</span> <span class="nav-text">英语语音识别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-微信JS-SDK环境准备"><span class="nav-number">3.</span> <span class="nav-text">一 微信JS-SDK环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1）公众号配置"><span class="nav-number">3.1.</span> <span class="nav-text">1）公众号配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置IP白名单"><span class="nav-number">3.1.1.</span> <span class="nav-text">配置IP白名单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置JS接口安全域名"><span class="nav-number">3.1.2.</span> <span class="nav-text">配置JS接口安全域名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2）获取access-token"><span class="nav-number">3.2.</span> <span class="nav-text">2）获取access_token</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-me-the-code"><span class="nav-number">3.2.1.</span> <span class="nav-text">Show me the code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Talk-is-cheap"><span class="nav-number">3.2.2.</span> <span class="nav-text">Talk is cheap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3）获取jsapi-ticket"><span class="nav-number">3.3.</span> <span class="nav-text">3）获取jsapi_ticket</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-me-the-code-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">Show me the code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Talk-is-cheap-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">Talk is cheap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4）刷新access-token及jsapi-ticket"><span class="nav-number">3.4.</span> <span class="nav-text">4）刷新access_token及jsapi_ticket</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-PHP定时执行任务"><span class="nav-number">3.4.1.</span> <span class="nav-text">1.PHP定时执行任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-服务器定时任务"><span class="nav-number">3.4.2.</span> <span class="nav-text">2.服务器定时任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-定时访问URL"><span class="nav-number">3.4.3.</span> <span class="nav-text">3. 定时访问URL</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
