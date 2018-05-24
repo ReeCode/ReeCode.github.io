@@ -96,7 +96,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/09/reecode/qrcode.png">
 <meta property="og:image" content="http://yoursite.com/2018/05/09/reecode/getUserMedia.png">
-<meta property="og:updated_time" content="2018-05-24T14:26:28.105Z">
+<meta property="og:updated_time" content="2018-05-24T14:33:31.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于微信JS-SDK的录音与语音评价功能实现">
 <meta name="twitter:description" content="最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是简单的Demo： 最近接受了一个新的需求，希望制作一个基于微信的英语语音评价页面。即点击录音按钮，用户录音说出预设的英文，根据用户的发音给出对应的评价。以下是示例二维码，使用微信扫一扫即可查看： 功能列表 ☑ 录音 ☑ 录音动画 ☑ 录音播放 ☑ 英语语音评价">
@@ -422,14 +422,16 @@
 <li>专门着力于语音识别及相关产业的技术平台，例如<code>讯飞</code>以及调研中发现的<code>驰声</code>。<br>优势：专业并且提供语音评测相关功能；<br>劣势：花费昂贵；</li>
 <li>AI开放平台，因为各大厂商布局AI，免费提供语音识别相关的接口。<br>优势：免费，API清晰；<br>劣势：并非为专门为教育定制，无语音评测功能；</li>
 </ol>
-<p>结合项目的实际情况，决定使用第二种方案。（主要是因为经费有限……）<br>大厂提供的免费方案主要有：</p>
+<p>结合项目的实际情况，决定使用第二种方案。（主要是因为经费有限……）</p>
+<p>大厂提供的免费方案主要有：</p>
 <ul>
 <li><a href="https://cloud.baidu.com/doc/SPEECH/ASR-API.html" target="_blank" rel="noopener">百度AI</a><br>限制：50000次/天免费<br>格式支持：pcm（不压缩）、wav（不压缩，pcm编码）、amr（压缩格式）；固定16k 采样率；</li>
 <li><del><a href="https://cloud.tencent.com/document/product/441" target="_blank" rel="noopener">腾讯AI开发平台</a></del><br>语音参数：必须符合16k或8K采样率、16bit采样位数、单声道<br>语音格式：PCM、WAV、AMR、 SILK<br>其他：目前只支持<strong>汉语</strong></li>
 <li><del><a href="https://cloud.tencent.com/document/product/441/6204" target="_blank" rel="noopener">腾讯云智能语音服务</a></del><br>语音参数：必须符合16k或8K采样率、16bit采样位数、单声道<br>语音格式：通用标准格式，例如 mp3，wma，wav 等</li>
 <li><del><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=21516712282KzWVE" target="_blank" rel="noopener">微信公众平台AI开放接口</a></del><br>语音参数：16k，单声道，最大1M<br>语音格式：mp3</li>
-<li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank" rel="noopener">微信公众平台JS-SDK智能接口</a><br>其他：目前只支持<strong>汉语</strong><br><del>大厂竞争果然系列，大鹅厂光语音服务肉眼可见的就折腾了这么多。（大雾）</del></li>
+<li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank" rel="noopener">微信公众平台JS-SDK智能接口</a><br>其他：目前只支持<strong>汉语</strong></li>
 </ul>
+<p><del>大厂竞争果然系列，大鹅厂光语音服务肉眼可见的就折腾了这么多。（大雾）</del></p>
 <p>经过一番折腾，最终可以形成两种方案：</p>
 <ol>
 <li><p><code>微信JS-SDK音频接口录音</code>-&gt;<code>上传到微信临时素材</code>-&gt;<code>下载到服务器</code>-&gt;<code>转换录音文件格式</code>-&gt;<code>百度AI语音识别返回结果</code>-&gt;<code>与预置的文件比对</code>-&gt;<code>返回比对结果</code><br>优势：识别结果准<br>劣势：慢（因为无法直接获取用户的录音，需要从微信公众平台的<code>临时素材</code>中转，且录音文件格式与百度AI可识别格式不一致，所以整个流程下来太慢）；微信公众号需要<code>企业认证</code><br>其他：至于为什么不选用腾讯系列，因为<del>腾讯系列语音服务没有调通</del>。。。</p>
