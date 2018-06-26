@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://reecode.github.io/"/>
-  <updated>2018-06-07T16:10:26.454Z</updated>
+  <updated>2018-06-26T16:51:40.676Z</updated>
   <id>https://reecode.github.io/</id>
   
   <author>
@@ -17,27 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一次做技术分享后的一些感想</title>
-    <link href="https://reecode.github.io/2018/06/07/think0607/"/>
-    <id>https://reecode.github.io/2018/06/07/think0607/</id>
-    <published>2018-06-07T15:47:49.000Z</published>
-    <updated>2018-06-07T16:10:26.454Z</updated>
+    <title>git配置多个ssh的几个问题</title>
+    <link href="https://reecode.github.io/2018/06/26/git0626/"/>
+    <id>https://reecode.github.io/2018/06/26/git0626/</id>
+    <published>2018-06-26T15:28:37.000Z</published>
+    <updated>2018-06-26T16:51:40.676Z</updated>
     
-    <content type="html"><![CDATA[<p>今天在部门内做了个小的分享，分享的内容主要是第一篇博客<a href="https://reecode.github.io/2018/05/09/reecode/">《从零开始实现基于微信JS-SDK的录音与语音评价功能》</a>。加之最近心中的一些郁结，主要是关于职业前景与中年危机的担忧，就此记下，聊以抒怀。</p>]]></content>
+    <content type="html"><![CDATA[<p>微信小程序最近一次的更新（2018.06.12）在开发者工具中新增了TGit工具栏入口，于是决定将在开发的小程序代码托管到腾讯云的TGit上。由于已经配置了github的SSH，需要为git配置多个SSH满足二者同时工作的要求。过程很简单，基本过程如下：</p><h1 id="一-配置过程"><a href="#一-配置过程" class="headerlink" title="一 配置过程"></a>一 配置过程</h1><h2 id="1-生成github的ssh-key"><a href="#1-生成github的ssh-key" class="headerlink" title="1 生成github的ssh-key"></a>1 生成github的ssh-key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"email@github.com” -f ~/.ssh/id-rsa</span></span><br></pre></td></tr></table></figure><h2 id="2-生成TGit的ssh-key"><a href="#2-生成TGit的ssh-key" class="headerlink" title="2 生成TGit的ssh-key"></a>2 生成TGit的ssh-key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"email@git.cloud.tencent.com” -f ~/.ssh/id-rsa-tencent</span></span><br></pre></td></tr></table></figure><ol><li>如果不加 <code>-f ~/.ssh/id-rsa</code>，会弹出<code>Enter file in which to save the key (/.ssh/id_rsa)</code>需要用户将生产的ssh-key保存在某个文件中，默认为当前操作目录下的id_ras中，需要用户另行将产生id_ras以及id_ras.pub复制到git默认访问的位置：Mac为<code>~/.ssh/</code>下，Windows为<code>C:\Users\popfisher\.ssh</code>下；</li><li>两次ssh-key使用不同名字加以区分，例如TGit存储在<code>id_rsa_tencent</code>中;</li><li>TGit的邮箱为创建的id名，可在腾讯云下查找到；</li><li>输入以上命令后会提示<code>Enter passphrase (empty for no passphrase):</code>让你输入访问密码，建议此处省略，否则每次实用git都会输入密码；</li></ol><h2 id="3-将生成的公钥配置到git服务器上"><a href="#3-将生成的公钥配置到git服务器上" class="headerlink" title="3 将生成的公钥配置到git服务器上"></a>3 将生成的公钥配置到git服务器上</h2><p>将对应的id_rsa.pub中的信息复制到github与TGit上SSH中,如下图：<br><img src="/2018/06/26/git0626/github.png" title="github配置ssh"><br><img src="/2018/06/26/git0626/TGit.png" title="TGit配置ssh"></p><h2 id="4-修改配置文件"><a href="#4-修改配置文件" class="headerlink" title="4 修改配置文件"></a>4 修改配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 配置github.com</span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line"></span><br><span class="line"># 配置git.cloud.tencent.com</span><br><span class="line">Host git.cloud.tencent.com</span><br><span class="line">    HostName git.cloud.tencent.com</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_tencent</span><br><span class="line">    PreferredAuthentications publickey</span><br></pre></td></tr></table></figure><h2 id="5-测试是否联通"><a href="#5-测试是否联通" class="headerlink" title="5 测试是否联通"></a>5 测试是否联通</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line"># 输出</span><br><span class="line">Welcome to GitHub, xxxxx! 即成功。</span><br></pre></td></tr></table></figure><h1 id="二-踩到的坑"><a href="#二-踩到的坑" class="headerlink" title="二 踩到的坑"></a>二 踩到的坑</h1><h1 id="1-TGit中https与ssh方式域名不一致"><a href="#1-TGit中https与ssh方式域名不一致" class="headerlink" title="1 TGit中https与ssh方式域名不一致"></a>1 TGit中https与ssh方式域名不一致</h1><p><strong>注意：</strong><br>TGit中https方式与ssh方式域名不一致。</p><ul><li>https方式域名为<code>git.qcloud.com</code></li><li>ssh方式域名为<a href="mailto:`git@git.cloud.tencent.com" target="_blank" rel="noopener">`git@git.cloud.tencent.com</a>`</li></ul><p>这就导致了在测试是否联通的时候报如下几个错：</p><ol><li>测试<code>$ ssh -t git@git.qcloud.com</code>报错<a href="mailto:`git@git.qcloud.com" target="_blank" rel="noopener">`git@git.qcloud.com</a>: Permission denied (publickey).  `即没有访问git.qcloud.com的公钥；</li><li>测试<code>$ ssh -t git@git.qcloud.tencent.com</code>报错<code>ssh: Could not resolve hostname git.qcloud.tencent.com: nodename nor servname provided, or not known</code>.即无法访问到这个域名。</li></ol><h1 id="2-shell-request-failed-on-channel-0-问题"><a href="#2-shell-request-failed-on-channel-0-问题" class="headerlink" title="2 shell request failed on channel 0 问题"></a>2 shell request failed on channel 0 问题</h1><p>在测试正确的TGit过程中，即命令<code>$ ssh -t git@git.cloud.tencent.com</code>，会报错<code>shell request failed on channel 0</code>，在网上查了一些相关的解释，以及通过调试模式得到相关log为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">debug1: channel 0: new [client-session]</span><br><span class="line">debug1: Entering interactive session.</span><br><span class="line">debug1: pledge: network</span><br><span class="line">debug1: Sending environment.</span><br><span class="line">debug1: Sending env LANG = zh_CN.UTF-8</span><br><span class="line">shell request failed on channel 0</span><br></pre></td></tr></table></figure></p><p>ssh已经建立链接，进入交互回话，但是 channel 0 无应答。<br>分析相关原因为：</p><ol><li>腾讯TGit有相关限制；</li><li>我没有将TGit的user-name与user-email 配置为全局</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;今天在部门内做了个小的分享，分享的内容主要是第一篇博客&lt;a href=&quot;https://reecode.github.io/2018/05/09/reecode/&quot;&gt;《从零开始实现基于微信JS-SDK的录音与语音评价功能》&lt;/a&gt;。加之最近心中的一些郁结，主要是关于职业前景
+        &lt;p&gt;微信小程序最近一次的更新（2018.06.12）在开发者工具中新增了TGit工具栏入口，于是决定将在开发的小程序代码托管到腾讯云的TGit上。由于已经配置了github的SSH，需要为git配置多个SSH满足二者同时工作的要求。过程很简单，基本过程如下：&lt;/p&gt;
+&lt;h1 i
       
     
     </summary>
     
-      <category term="随想" scheme="https://reecode.github.io/categories/%E9%9A%8F%E6%83%B3/"/>
+      <category term="前端" scheme="https://reecode.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="随想" scheme="https://reecode.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
+      <category term="git" scheme="https://reecode.github.io/tags/git/"/>
+    
+      <category term="ssh" scheme="https://reecode.github.io/tags/ssh/"/>
+    
+      <category term="TGit" scheme="https://reecode.github.io/tags/TGit/"/>
     
   </entry>
   
