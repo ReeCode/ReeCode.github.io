@@ -98,7 +98,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://reecode.github.io/2018/06/26/git0626/github.png">
 <meta property="og:image" content="https://reecode.github.io/2018/06/26/git0626/TGit.png">
-<meta property="og:updated_time" content="2018-06-26T16:57:08.648Z">
+<meta property="og:updated_time" content="2018-06-26T16:59:07.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git配置多个ssh的几个问题">
 <meta name="twitter:description" content="微信小程序最近一次的更新（2018.06.12）在开发者工具中新增了TGit工具栏入口，于是决定将在开发的小程序代码托管到腾讯云的TGit上。由于已经配置了github的SSH，需要为git配置多个SSH满足二者同时工作的要求。过程很简单，基本过程如下： 一 配置过程1 生成github的ssh-key1$ ssh-keygen -t rsa -C &quot;email@github.com” -f ~/">
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  709 字
+                  711 字
                 </span>
               
 
@@ -406,7 +406,7 @@
 <h1 id="一-配置过程"><a href="#一-配置过程" class="headerlink" title="一 配置过程"></a>一 配置过程</h1><h2 id="1-生成github的ssh-key"><a href="#1-生成github的ssh-key" class="headerlink" title="1 生成github的ssh-key"></a>1 生成github的ssh-key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"email@github.com” -f ~/.ssh/id-rsa</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-生成TGit的ssh-key"><a href="#2-生成TGit的ssh-key" class="headerlink" title="2 生成TGit的ssh-key"></a>2 生成TGit的ssh-key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"email@git.cloud.tencent.com” -f ~/.ssh/id-rsa-tencent</span></span><br></pre></td></tr></table></figure>
 <ol>
-<li>如果不加 <code>-f ~/.ssh/id-rsa</code>，会弹出<code>Enter file in which to save the key (/.ssh/id_rsa)</code>需要用户将生产的ssh-key保存在某个文件中，默认为当前操作目录下的id_ras中，需要用户另行将产生id_ras以及id_ras.pub复制到git默认访问的位置：Mac为<code>~/.ssh/</code>下，Windows为<code>C:\Users\popfisher\.ssh</code>下；</li>
+<li>如果不加 <code>-f ~/.ssh/id-rsa</code>，会弹出<code>Enter file in which to save the key (/.ssh/id_rsa)</code>需要用户将生产的ssh-key保存在某个文件中，默认为当前操作目录下的id_ras中，需要用户另行将产生id_ras以及id_ras.pub复制到git默认访问的位置：Mac为<code>~/.ssh/</code>下，Windows为<code>C:\Users\your user name\.ssh</code>下；</li>
 <li>两次ssh-key使用不同名字加以区分，例如TGit存储在<code>id_rsa_tencent</code>中;</li>
 <li>TGit的邮箱为创建的id名，可在腾讯云下查找到；</li>
 <li>输入以上命令后会提示<code>Enter passphrase (empty for no passphrase):</code>让你输入访问密码，建议此处省略，否则每次实用git都会输入密码；</li>
